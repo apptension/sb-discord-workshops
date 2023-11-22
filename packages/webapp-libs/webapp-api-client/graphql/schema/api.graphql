@@ -36,6 +36,7 @@ that will be handled by the multipart request spec
 """
 scalar Upload
 type Query {
+  allWorkshopItems(before: String, after: String, first: Int, last: Int): WorkshopItemConnection
   allSubscriptionPlans(before: String, after: String, first: Int, last: Int): StripePriceConnection
   activeSubscription: SubscriptionScheduleType
   allPaymentMethods(before: String, after: String, first: Int, last: Int): PaymentMethodConnection
@@ -57,11 +58,11 @@ type Query {
     id: ID!
   ): Node
 }
-type StripePriceConnection {
+type WorkshopItemConnection {
   "Pagination data for this connection."
   pageInfo: PageInfo!
   "Contains the nodes in this connection."
-  edges: [StripePriceEdge]!
+  edges: [WorkshopItemEdge]!
 }
 "The Relay compliant `PageInfo` type, containing data necessary to paginate this connection."
 type PageInfo {
@@ -73,6 +74,24 @@ type PageInfo {
   startCursor: String
   "When paginating forwards, the cursor to continue."
   endCursor: String
+}
+"A Relay edge containing a `WorkshopItem` and its cursor."
+type WorkshopItemEdge {
+  "The item at the end of the edge"
+  node: WorkshopItemType
+  "A cursor for use in pagination"
+  cursor: String!
+}
+type WorkshopItemType implements Node {
+  "The ID of the object"
+  id: ID!
+  name: String!
+}
+type StripePriceConnection {
+  "Pagination data for this connection."
+  pageInfo: PageInfo!
+  "Contains the nodes in this connection."
+  edges: [StripePriceEdge]!
 }
 "A Relay edge containing a `StripePrice` and its cursor."
 type StripePriceEdge {

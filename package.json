@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.8.4",
-    "@apollo/rover": "^0.19.0",
+    "@apollo/rover": "^0.21.0",
     "@babel/preset-react": "^7.22.15",
     "@graphql-codegen/cli": "^5.0.0",
     "@graphql-typed-document-node/core": "^3.2.0",

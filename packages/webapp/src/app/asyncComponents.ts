@@ -7,4 +7,6 @@ export const Login = asyncComponent(() => import('../routes/auth/login'));
 export const Logout = asyncComponent(() => import('../routes/auth/logout'));
 export const Profile = asyncComponent(() => import('../routes/profile'));
 export const ConfirmEmail = asyncComponent(() => import('../routes/auth/confirmEmail'));
+
+export const WorkshopItemsList = asyncComponent(() => import('../routes/workshops/workshopItemsList'));
 //<-- IMPORT ROUTE -->

@@ -5,10 +5,19 @@ from apps.finances import schema as finances_schema
 from apps.notifications import schema as notifications_schema
 from apps.users import schema as users_schema
 from apps.integrations import schema as integrations_schema
+from apps.workshops import schema as workshops_schema
 from common.graphql.utils import graphql_query, graphql_mutation, graphql_subscription
 
 schema = graphene.Schema(
-    query=graphql_query([demo_schema.Query, notifications_schema.Query, users_schema.Query, finances_schema.Query]),
+    query=graphql_query(
+        [
+            demo_schema.Query,
+            notifications_schema.Query,
+            users_schema.Query,
+            finances_schema.Query,
+            workshops_schema.Query,
+        ]
+    ),
     mutation=graphql_mutation(
         [
             demo_schema.Mutation,

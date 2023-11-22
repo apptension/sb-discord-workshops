@@ -95,7 +95,6 @@ export class ServerlessCiConfig extends ServiceCiConfig {
           build: {
             commands: [
               `pnpm saas workers lint`,
-              'pnpm saas emails build',
               `pnpm saas workers test`,
             ],
           },
