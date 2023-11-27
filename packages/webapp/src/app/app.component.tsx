@@ -23,7 +23,7 @@ import { Admin } from '../routes/admin';
 import { PasswordReset } from '../routes/auth/passwordReset';
 import ValidateOtp from '../routes/auth/validateOtp';
 import { AnonymousRoute, AuthRoute } from '../shared/components/routes';
-import { ConfirmEmail, Home, Login, Logout, NotFound, Profile, Signup, WorkshopItemsList } from './asyncComponents';
+import { ConfirmEmail, Home, Login, Logout, NotFound, Profile, Signup, WorkshopItemsList, WorkshopItemCreate } from './asyncComponents';
 import { LANG_PREFIX, RoutesConfig } from './config/routes';
 import { ValidRoutesProviders } from './providers';
 
@@ -66,6 +66,7 @@ export const App = () => {
           <Route path={RoutesConfig.documents} element={<Documents />} />
           <Route path={RoutesConfig.saasIdeas} element={<SaasIdeas />} />
           <Route path={RoutesConfig.workshops.list} element={<WorkshopItemsList />} />
+          <Route path={RoutesConfig.workshops.create} element={<WorkshopItemCreate />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path={LANG_PREFIX} element={<AuthRoute allowedRoles={Role.ADMIN} />}>

@@ -27,6 +27,7 @@ schema = graphene.Schema(
             users_schema.Mutation,
             finances_schema.Mutation,
             integrations_schema.Mutation,
+            workshops_schema.Mutation,
         ]
     ),
     subscription=graphql_subscription(([notifications_schema.Subscription])),

@@ -729,6 +729,7 @@ type FileFieldType {
   name: String
 }
 type ApiMutation {
+  createWorkshop(input: WorkshopItemCreateMutationInput!): WorkshopItemCreateMutationPayload
   generateSaasIdeas(input: GenerateSaasIdeasMutationInput!): GenerateSaasIdeasMutationPayload
   changeActiveSubscription(input: ChangeActiveSubscriptionMutationInput!): ChangeActiveSubscriptionMutationPayload
   cancelActiveSubscription(input: CancelActiveSubscriptionMutationInput!): CancelActiveSubscriptionMutationPayload
@@ -757,6 +758,10 @@ type ApiMutation {
   deleteDocumentDemoItem(input: DeleteDocumentDemoItemMutationInput!): DeleteDocumentDemoItemMutationPayload
   createFavoriteContentfulDemoItem(input: CreateFavoriteContentfulDemoItemMutationInput!): CreateFavoriteContentfulDemoItemMutationPayload
   deleteFavoriteContentfulDemoItem(input: DeleteFavoriteContentfulDemoItemMutationInput!): DeleteFavoriteContentfulDemoItemMutationPayload
+}
+type WorkshopItemCreateMutationPayload {
+  workshopItem: WorkshopItemType
+  clientMutationId: String
 }
 type GenerateSaasIdeasMutationPayload {
   ideas: [String]
@@ -1365,6 +1370,10 @@ enum DjstripeSetupIntentUsageChoices {
   OFF_SESSION
   "On session"
   ON_SESSION
+}
+input WorkshopItemCreateMutationInput {
+  name: String!
+  clientMutationId: String
 }
 input GenerateSaasIdeasMutationInput {
   keywords: [String]

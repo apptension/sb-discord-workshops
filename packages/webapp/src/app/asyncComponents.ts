@@ -9,4 +9,5 @@ export const Profile = asyncComponent(() => import('../routes/profile'));
 export const ConfirmEmail = asyncComponent(() => import('../routes/auth/confirmEmail'));
 
 export const WorkshopItemsList = asyncComponent(() => import('../routes/workshops/workshopItemsList'));
+export const WorkshopItemCreate = asyncComponent(() => import('../routes/workshops/workshopItemCreate'));
 //<-- IMPORT ROUTE -->
